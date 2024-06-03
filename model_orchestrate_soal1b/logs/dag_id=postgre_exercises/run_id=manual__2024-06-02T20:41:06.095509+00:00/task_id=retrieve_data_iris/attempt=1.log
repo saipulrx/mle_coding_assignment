@@ -1,0 +1,41 @@
+[2024-06-02T20:41:10.564+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: postgre_exercises.retrieve_data_iris manual__2024-06-02T20:41:06.095509+00:00 [queued]>
+[2024-06-02T20:41:10.567+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: postgre_exercises.retrieve_data_iris manual__2024-06-02T20:41:06.095509+00:00 [queued]>
+[2024-06-02T20:41:10.567+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-06-02T20:41:10.575+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): retrieve_data_iris> on 2024-06-02 20:41:06.095509+00:00
+[2024-06-02T20:41:10.579+0000] {standard_task_runner.py:60} INFO - Started process 2137 to run task
+[2024-06-02T20:41:10.582+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'postgre_exercises', 'retrieve_data_iris', 'manual__2024-06-02T20:41:06.095509+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/create_table.py', '--cfg-path', '/tmp/tmpm89ub1sd']
+[2024-06-02T20:41:10.583+0000] {standard_task_runner.py:88} INFO - Job 37: Subtask retrieve_data_iris
+[2024-06-02T20:41:10.615+0000] {task_command.py:423} INFO - Running <TaskInstance: postgre_exercises.retrieve_data_iris manual__2024-06-02T20:41:06.095509+00:00 [running]> on host 35a5c0dbc0eb
+[2024-06-02T20:41:10.667+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='msaipulrx@gmail.com' AIRFLOW_CTX_DAG_OWNER='saipul' AIRFLOW_CTX_DAG_ID='postgre_exercises' AIRFLOW_CTX_TASK_ID='retrieve_data_iris' AIRFLOW_CTX_EXECUTION_DATE='2024-06-02T20:41:06.095509+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-02T20:41:06.095509+00:00'
+[2024-06-02T20:41:10.692+0000] {logging_mixin.py:188} INFO - Table Input
+[2024-06-02T20:41:10.701+0000] {logging_mixin.py:188} INFO -       Id  SepalLengthCm  SepalWidthCm  PetalLengthCm  PetalWidthCm
+0      1            5.1           3.5            1.4           0.2
+1      2            4.9           3.0            1.4           0.2
+2      3            4.7           3.2            1.3           0.2
+3      4            4.6           3.1            1.5           0.2
+4      5            5.0           3.6            1.4           0.2
+..   ...            ...           ...            ...           ...
+145  146            6.7           3.0            5.2           2.3
+146  147            6.3           2.5            5.0           1.9
+147  148            6.5           3.0            5.2           2.0
+148  149            6.2           3.4            5.4           2.3
+149  150            5.9           3.0            5.1           1.8
+
+[150 rows x 5 columns]
+[2024-06-02T20:41:10.701+0000] {python.py:202} INFO - Done. Returned value was:       Id  SepalLengthCm  SepalWidthCm  PetalLengthCm  PetalWidthCm
+0      1            5.1           3.5            1.4           0.2
+1      2            4.9           3.0            1.4           0.2
+2      3            4.7           3.2            1.3           0.2
+3      4            4.6           3.1            1.5           0.2
+4      5            5.0           3.6            1.4           0.2
+..   ...            ...           ...            ...           ...
+145  146            6.7           3.0            5.2           2.3
+146  147            6.3           2.5            5.0           1.9
+147  148            6.5           3.0            5.2           2.0
+148  149            6.2           3.4            5.4           2.3
+149  150            5.9           3.0            5.1           1.8
+
+[150 rows x 5 columns]
+[2024-06-02T20:41:10.755+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=postgre_exercises, task_id=retrieve_data_iris, execution_date=20240602T204106, start_date=20240602T204110, end_date=20240602T204110
+[2024-06-02T20:41:10.804+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-06-02T20:41:10.816+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

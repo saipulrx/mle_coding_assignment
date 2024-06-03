@@ -1,0 +1,27 @@
+[2024-06-02T20:46:34.298+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: postgre_exercises.prediction_result manual__2024-06-02T20:46:28.463729+00:00 [queued]>
+[2024-06-02T20:46:34.302+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: postgre_exercises.prediction_result manual__2024-06-02T20:46:28.463729+00:00 [queued]>
+[2024-06-02T20:46:34.302+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-06-02T20:46:34.311+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): prediction_result> on 2024-06-02 20:46:28.463729+00:00
+[2024-06-02T20:46:34.314+0000] {standard_task_runner.py:60} INFO - Started process 2230 to run task
+[2024-06-02T20:46:34.317+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'postgre_exercises', 'prediction_result', 'manual__2024-06-02T20:46:28.463729+00:00', '--job-id', '41', '--raw', '--subdir', 'DAGS_FOLDER/create_table.py', '--cfg-path', '/tmp/tmp1cv2ctws']
+[2024-06-02T20:46:34.318+0000] {standard_task_runner.py:88} INFO - Job 41: Subtask prediction_result
+[2024-06-02T20:46:34.363+0000] {task_command.py:423} INFO - Running <TaskInstance: postgre_exercises.prediction_result manual__2024-06-02T20:46:28.463729+00:00 [running]> on host 35a5c0dbc0eb
+[2024-06-02T20:46:34.421+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='msaipulrx@gmail.com' AIRFLOW_CTX_DAG_OWNER='saipul' AIRFLOW_CTX_DAG_ID='postgre_exercises' AIRFLOW_CTX_TASK_ID='prediction_result' AIRFLOW_CTX_EXECUTION_DATE='2024-06-02T20:46:28.463729+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-02T20:46:28.463729+00:00'
+[2024-06-02T20:46:34.925+0000] {logging_mixin.py:188} INFO - Table Input
+[2024-06-02T20:46:34.925+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/script/call_model.py", line 48, in write_prediction_result
+    feature_column = pd.read_sql(sql_feature_column)
+TypeError: read_sql() missing 1 required positional argument: 'con'
+[2024-06-02T20:46:34.931+0000] {taskinstance.py:1149} INFO - Marking task as UP_FOR_RETRY. dag_id=postgre_exercises, task_id=prediction_result, execution_date=20240602T204628, start_date=20240602T204634, end_date=20240602T204634
+[2024-06-02T20:46:34.940+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 41 for task prediction_result (read_sql() missing 1 required positional argument: 'con'; 2230)
+[2024-06-02T20:46:34.963+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-06-02T20:46:34.974+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check
