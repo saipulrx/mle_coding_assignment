@@ -1,0 +1,9 @@
+joblib==1.0.1
+jupyter==1.0.0
+matplotlib==3.4.3
+numpy==1.21.2
+scikit_learn
+pandas==1.3.3
+mlflow
+pickle5
+tensorflow
